@@ -57,7 +57,7 @@ const posts = [
 ];
 
 const postContainerEl = document.querySelector('div.post');
-const likeButton = document.querySelector('a.like-button');
+let likeButton = document.querySelector('a.like-button');
 
 posts.forEach ((element) => {
     postContainerEl.innerHTML += createPost(element.author.image, element.author.name, element.created, element.content, element.media, element.likes);
@@ -65,7 +65,7 @@ posts.forEach ((element) => {
 })
 
 // al click sul bottone viene aggiunta una classe active che cambia il colore del bottone e aumenta il numero dei like.
-likeButton.addEventListener('click', function() {
+likeButton.addEventListener( 'click', function() {
     let active = false
     if (active === true) {
         likeButton.classList.add('like-button--liked')
@@ -118,31 +118,3 @@ function createPost(image, name, created, content, media, likes) {
 
 
 
-// <!-- <div class="post__header">
-// <div class="post-meta">                    
-//     <div class="post-meta__icon">
-//         <img class="profile-pic" src="https://unsplash.it/300/300?image=15" alt="Phil Mangione">                    
-//     </div>
-//     <div class="post-meta__data">
-//         <div class="post-meta__author">Phil Mangione</div>
-//         <div class="post-meta__time">4 mesi fa</div>
-//     </div>                    
-// </div>
-// </div>
-// <div class="post__text">Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio minima iusto. Ad ad maiores et sint voluptate recusandae architecto. Et nihil ullam aut alias.</div>
-// <div class="post__image">
-// <img src="https://unsplash.it/600/300?image=171" alt="">
-// </div>
-// <div class="post__footer">
-// <div class="likes js-likes">
-//     <div class="likes__cta">
-//         <a class="like-button  js-like-button" href="#" data-postid="1">
-//             <i class="like-button__icon fas fa-thumbs-up" aria-hidden="true"></i>
-//             <span class="like-button__label">Mi Piace</span>
-//         </a>
-//     </div>
-//     <div class="likes__counter">
-//         Piace a <b id="like-counter-1" class="js-likes-counter">80</b> persone
-//     </div>
-// </div> 
-// </div>             -->
