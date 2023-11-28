@@ -57,13 +57,13 @@ const posts = [
 ];
 
 const postContainerEl = document.querySelector('div.post');
-let likeButton = document.querySelector('a.like-button');
 
 posts.forEach ((element) => {
     postContainerEl.innerHTML += createPost(element.author.image, element.author.name, element.created, element.content, element.media, element.likes);
 
 })
 
+const likeButton = document.querySelector('a.like-button');
 // al click sul bottone viene aggiunta una classe active che cambia il colore del bottone e aumenta il numero dei like.
 likeButton.addEventListener( 'click', function() {
     let active = false
