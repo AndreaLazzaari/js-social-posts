@@ -62,3 +62,46 @@ const posts = [
 
 
 
+
+
+
+
+// FUNZIONI
+
+function nuovoPost(image, name, created, content, media, likes) {
+    return 
+    `
+    <div class="post">
+        <div class="post__header">
+            <div class="post-meta">                    
+                <div class="post-meta__icon">
+                    <img class="profile-pic" src="${author.image}" alt="${author.name}' picture">                    
+                </div>
+                <div class="post-meta__data">
+                    <div class="post-meta__author">${author.name}</div>
+                    <div class="post-meta__time">${posts.created}</div>
+                </div>                    
+            </div>
+        </div>
+        <div class="post__text">${posts.content}</div>
+        <div class="post__image">
+            <img src="${posts.media}" alt="descrizione img">
+        </div>
+        <div class="post__footer">
+            <div class="likes js-likes">
+                <div class="likes__cta">
+                    <a class="like-button  js-like-button" href="#" data-postid="1">
+                        <i class="like-button__icon fas fa-thumbs-up" aria-hidden="true"></i>
+                        <span class="like-button__label">Mi Piace</span>
+                    </a>
+                </div>
+                <div class="likes__counter">
+                    Piace a <b id="like-counter-1" class="js-likes-counter">${posts.likes}</b> persone
+                </div>
+            </div> 
+        </div>            
+    </div>
+
+
+    `
+}
