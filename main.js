@@ -58,19 +58,37 @@ const posts = [
 
 const postContainerEl = document.querySelector('div.post');
 
-posts.forEach ((element) => {
+let likeCounter = [];
+
+posts.forEach ((element, index) => {
     postContainerEl.innerHTML += createPost(element.author.image, element.author.name, element.created, element.content, element.media, element.likes);
-
+    likeCounter[index] = element.likes
 })
 
-const likeButton = document.querySelector('a.like-button');
+console.log(likeCounter)
+
+const likeButton = document.querySelectorAll('a.like-button');
+console.log(likeButton)
+for (let index = 0; index < likeButton.length; index++) {
+    const element = likeButton[index];
+    element.addEventListener( 'click', function(e) {
+    e.preventDefault()
+        
+        if ( element.classList.contains('like-button--liked') === true) {
+            element.classList.remove('like-button--liked')
+            
+        } else {
+            element.classList.add('like-button--liked')
+
+        }
+
+        console.log(likeCounter[index])
+    })
+    
+
+    
+}
 // al click sul bottone viene aggiunta una classe active che cambia il colore del bottone e aumenta il numero dei like.
-likeButton.addEventListener( 'click', function() {
-    let active = false
-    if (active === true) {
-        likeButton.classList.add('like-button--liked')
-    }
-})
 
 
 
